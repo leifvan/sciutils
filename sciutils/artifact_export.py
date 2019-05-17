@@ -34,7 +34,8 @@ def get_unique_file_name(base_name):
 
 def create_conda_yml(data_dir):
     # collect hashes of other yml files in this folder
-    other_hashes = [(fp, get_file_hash(fp)) for fp in os.listdir(data_dir) if fp.endswith('.yml')]
+    full_yml_paths = [os.path.join(data_dir, fp) for fp in os.listdir(data_dir) if fp.endswith('.yml')]
+    other_hashes = [(fp, get_file_hash(fp)) for fp in full_yml_paths]
     conda_env_name = os.environ['CONDA_DEFAULT_ENV']
     print(conda_env_name)
 

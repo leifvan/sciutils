@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='sciutils',
-    version='0.1dev',
+    version='0.1.dev1',
     packages=['sciutils'],
     url='https://github.com/leifvan/sciutils',
     license='Unlicense',
