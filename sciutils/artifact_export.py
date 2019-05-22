@@ -37,6 +37,7 @@ def create_conda_yml(data_dir):
     full_yml_paths = [os.path.join(data_dir, fp) for fp in os.listdir(data_dir) if fp.endswith('.yml')]
     other_hashes = [(fp, get_file_hash(fp)) for fp in full_yml_paths]
     conda_env_name = os.environ['CONDA_DEFAULT_ENV']
+    # TODO remove print
     print(conda_env_name)
 
     with NamedTemporaryFile() as tempfile:
@@ -94,6 +95,7 @@ def export_artifact_meta(artifact_path):
     #  - git revision
     #  - file hash
     #  - primary generating file
+    # TODO add info about input data
 
     start_time = datetime.now()
 
